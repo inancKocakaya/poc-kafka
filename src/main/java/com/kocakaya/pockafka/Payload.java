@@ -1,4 +1,4 @@
 package com.kocakaya.pockafka;
 
-public record Payload() {
+public record Payload(String message) {
 }
