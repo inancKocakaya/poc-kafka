@@ -21,8 +21,4 @@ public class KafkaConsumer {
         payload = message;
         latch.countDown();
     }
-
-    public void resetLatch() {
-        latch = new CountDownLatch(1);
-    }
 }

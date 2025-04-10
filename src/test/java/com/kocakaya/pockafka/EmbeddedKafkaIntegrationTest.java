@@ -25,7 +25,7 @@ class EmbeddedKafkaIntegrationTest {
     @Test
     void givenEmbeddedKafkaBroker_whenSendingWithSimpleProducer_thenMessageReceived()
             throws Exception {
-        String data = "Sending with our own simple KafkaProducer";
+        String data = "ink message sent";
 
         producer.send("test-ink-topic", data);
 
