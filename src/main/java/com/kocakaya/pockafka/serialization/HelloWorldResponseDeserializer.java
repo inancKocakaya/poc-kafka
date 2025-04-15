@@ -4,7 +4,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.kocakaya.pockafka.HelloWorldResponse;
 import org.apache.kafka.common.serialization.Deserializer;
 
-public class HelloWorldDeserializer implements Deserializer<HelloWorldResponse> {
+public class HelloWorldResponseDeserializer implements Deserializer<HelloWorldResponse> {
 
     @Override
     public HelloWorldResponse deserialize(String topic, byte[] bytes) {

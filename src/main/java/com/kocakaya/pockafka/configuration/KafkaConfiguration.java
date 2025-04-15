@@ -1,8 +1,8 @@
 package com.kocakaya.pockafka.configuration;
 
 import com.kocakaya.pockafka.HelloWorldResponse;
-import com.kocakaya.pockafka.serialization.HelloWorldDeserializer;
-import com.kocakaya.pockafka.serialization.HelloWorldSerializer;
+import com.kocakaya.pockafka.serialization.HelloWorldResponseDeserializer;
+import com.kocakaya.pockafka.serialization.HelloWorldResponseSerializer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -32,7 +32,7 @@ public class KafkaConfiguration {
                 StringDeserializer.class);
         props.put(
                 ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
-                HelloWorldDeserializer.class);
+                HelloWorldResponseDeserializer.class);
         return new DefaultKafkaConsumerFactory<>(props);
     }
 
@@ -56,7 +56,7 @@ public class KafkaConfiguration {
                 StringSerializer.class);
         props.put(
                 ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
-                HelloWorldSerializer.class);
+                HelloWorldResponseSerializer.class);
         return new DefaultKafkaProducerFactory<>(props);
     }
 
