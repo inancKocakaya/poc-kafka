@@ -16,13 +16,9 @@ public class KafkaConsumer {
     private String payload;
 
     @KafkaListener(topics = "test-ink-topic", groupId = "ink")
-    public void receive(String message) {
-        log.info("received payload='{}'", message);
-        payload = message;
+    public void receive(HelloWorldResponse helloWorldResponse) {
+        log.info("received payload='{}'", helloWorldResponse.getGreeting() + "/" + helloWorldResponse.getDescription());
+        payload = helloWorldResponse.getGreeting();
         latch.countDown();
-    }
-
-    public void resetLatch() {
-        latch = new CountDownLatch(1);
     }
 }
