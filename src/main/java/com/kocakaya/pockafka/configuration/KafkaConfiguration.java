@@ -39,7 +39,6 @@ public class KafkaConfiguration {
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, HelloWorldResponse>
     kafkaListenerContainerFactory() {
-
         ConcurrentKafkaListenerContainerFactory<String, HelloWorldResponse> factory =
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
@@ -47,7 +46,7 @@ public class KafkaConfiguration {
     }
 
     @Bean
-    public ProducerFactory<String, HelloWorldResponse> greetingProducerFactory() {
+    public ProducerFactory<String, HelloWorldResponse> producerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(
                 ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
@@ -62,7 +61,7 @@ public class KafkaConfiguration {
     }
 
     @Bean
-    public KafkaTemplate<String, HelloWorldResponse> greetingKafkaTemplate() {
-        return new KafkaTemplate<>(greetingProducerFactory());
+    public KafkaTemplate<String, HelloWorldResponse> kafkaTemplate() {
+        return new KafkaTemplate<>(producerFactory());
     }
 }
