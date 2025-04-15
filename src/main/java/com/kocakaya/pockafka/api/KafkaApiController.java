@@ -1,5 +1,6 @@
-package com.kocakaya.pockafka;
+package com.kocakaya.pockafka.api;
 
+import com.kocakaya.pockafka.KafkaProducer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

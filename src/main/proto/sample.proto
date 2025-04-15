@@ -4,7 +4,6 @@ option java_package = "com.kocakaya.pockafka";
 option java_multiple_files = true;
 
 message HelloWorldRequest {
-  // a name to greet, default is "World"
   string name = 1;
 }
 
