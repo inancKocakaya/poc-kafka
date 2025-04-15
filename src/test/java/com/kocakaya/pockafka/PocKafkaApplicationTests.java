@@ -31,7 +31,7 @@ class EmbeddedKafkaIntegrationTest {
 
         boolean messageConsumed = consumer.getLatch().await(10, TimeUnit.SECONDS);
         assertTrue(messageConsumed);
-        assertEquals(data, consumer.getPayload());
-
+        assertEquals(data, consumer.getPayload().getGreeting());
+        assertEquals("desc from ink", consumer.getPayload().getDescription());
     }
 }

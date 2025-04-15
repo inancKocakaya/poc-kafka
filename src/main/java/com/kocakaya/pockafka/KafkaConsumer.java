@@ -13,12 +13,12 @@ import java.util.concurrent.CountDownLatch;
 public class KafkaConsumer {
 
     private CountDownLatch latch = new CountDownLatch(1);
-    private String payload;
+    private HelloWorldResponse payload;
 
     @KafkaListener(topics = "test-ink-topic", groupId = "ink")
     public void receive(HelloWorldResponse helloWorldResponse) {
         log.info("received payload='{}'", helloWorldResponse.getGreeting() + "/" + helloWorldResponse.getDescription());
-        payload = helloWorldResponse.getGreeting();
+        payload = helloWorldResponse;
         latch.countDown();
     }
 }
