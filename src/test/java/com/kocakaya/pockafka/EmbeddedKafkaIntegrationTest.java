@@ -23,7 +23,7 @@ class EmbeddedKafkaIntegrationTest {
     private KafkaProducer producer;
 
     @Test
-    void givenEmbeddedKafkaBroker_whenSendingWithSimpleProducer_thenMessageReceived()
+    void testMessageSentAndReceived()
             throws Exception {
         String data = "Sending with our own simple KafkaProducer";
 
